@@ -150,7 +150,10 @@ import {
   mdiRotateRight,
   mdiBookOpenPageVariant,
   mdiFileCabinet,
-  mdiSilverwareForkKnife
+  mdiSilverwareForkKnife,
+  mdiMessage,
+  mdiWindowMinimize,
+  mdiSend,
 } from "@mdi/js";
 
 export const icons = {
@@ -183,6 +186,7 @@ export const icons = {
   calendarWeek: mdiCalendarWeek,
   calendarWeekBegin: mdiCalendarWeekBegin,
   cartCheck: mdiCartCheck,
+  message: mdiMessage,
   check: mdiCheck,
   checkboxBlankOutline: mdiCheckboxBlankOutline,
   checkboxOutline: mdiCheckboxOutline,
@@ -250,6 +254,7 @@ export const icons = {
   rotateLeft: mdiRotateLeft,
   rotateRight: mdiRotateRight,
   search: mdiMagnify,
+  send: mdiSend,
   shareVariant: mdiShareVariant,
   shuffleVariant: mdiShuffleVariant,
   silverwareForkKnife: mdiSilverwareForkKnife,
@@ -279,6 +284,7 @@ export const icons = {
   weatherSunny: mdiWeatherSunny,
   webhook: mdiWebhook,
   windowClose: mdiWindowClose,
+  windowMinimize: mdiWindowMinimize,
   zip: mdiFolderZipOutline,
   undo: mdiUndo,
 
@@ -322,5 +328,4 @@ export const icons = {
   preserveLines: mdiText,
   preserveBlocks: mdiTextBoxOutline,
   flatten: mdiMinus,
-
 };
