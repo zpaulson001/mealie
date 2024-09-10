@@ -1,4 +1,4 @@
-import { ref } from "@nuxtjs/composition-api";
+import { ref, useContext } from "@nuxtjs/composition-api";
 import { EventSourceParserStream } from "eventsource-parser/stream";
 
 type Message = {
@@ -32,6 +32,9 @@ export function useNlapi() {
 
   const controller = ref<AbortController | null>(null);
 
+  const { $auth } = useContext();
+  const access_token = ($auth.strategy as any).token?.get();
+
   function reset() {
     controller.value?.abort();
     isPending.value = false;
@@ -54,6 +57,7 @@ export function useNlapi() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: access_token,
         },
         body: JSON.stringify({
           user_input: query,
