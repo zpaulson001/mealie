@@ -1,5 +1,11 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  vue: {
+    config: {
+      productionTip: true,
+      devtools: true,
+    },
+  },
   target: "static",
   head: {
     title: "Mealie",
@@ -28,9 +34,21 @@ export default {
     ],
     link: [
       { hid: "favicon", rel: "icon", type: "image/x-icon", href: "/favicon.ico", "data-n-head": "ssr" },
-      { hid: "shortcut icon", rel: "shortcut icon", type: "image/png", href: "/icons/icon-x64.png", "data-n-head": "ssr" },
-      { hid: "apple-touch-icon", rel: "apple-touch-icon", type: "image/png", href: "/icons/apple-touch-icon.png", "data-n-head": "ssr" },
-      { hid: "mask-icon", rel: "mask-icon", href: "/icons/safari-pinned-tab.svg", "data-n-head": "ssr" }
+      {
+        hid: "shortcut icon",
+        rel: "shortcut icon",
+        type: "image/png",
+        href: "/icons/icon-x64.png",
+        "data-n-head": "ssr",
+      },
+      {
+        hid: "apple-touch-icon",
+        rel: "apple-touch-icon",
+        type: "image/png",
+        href: "/icons/apple-touch-icon.png",
+        "data-n-head": "ssr",
+      },
+      { hid: "mask-icon", rel: "mask-icon", href: "/icons/safari-pinned-tab.svg", "data-n-head": "ssr" },
     ],
   },
 
@@ -166,7 +184,7 @@ export default {
         clientId: "",
         endpoints: {
           configuration: "",
-        }
+        },
       },
     },
   },
@@ -284,6 +302,8 @@ export default {
   publicRuntimeConfig: {
     GLOBAL_MIDDLEWARE: process.env.GLOBAL_MIDDLEWARE || null,
     SUB_PATH: process.env.SUB_PATH || "",
+    NLAPI_BASE_URL: process.env.NLAPI_BASE_URL || null,
+    TEST: process.env.TEST || null,
     axios: {
       browserBaseURL: process.env.SUB_PATH || "",
     },
@@ -363,12 +383,7 @@ export default {
       theme_color: process.env.THEME_LIGHT_PRIMARY || "#E58325",
       background_color: "#FFFFFF",
       display: "standalone",
-      display_override: [
-        "standalone",
-        "minimal-ui",
-        "browser",
-        "window-controls-overlay"
-      ],
+      display_override: ["standalone", "minimal-ui", "browser", "window-controls-overlay"],
       share_target: {
         action: "/r/create/url",
         method: "GET",
@@ -376,7 +391,7 @@ export default {
           /* title and url are not currently used in Mealie. If there are issues
              with sharing, uncommenting those lines might help solve the puzzle. */
           // "title": "title",
-          "text": "recipe_import_url",
+          text: "recipe_import_url",
           // "url": "url",
         },
       },
@@ -408,99 +423,97 @@ export default {
       ],
       screenshots: [
         {
-          "src": "/screenshots/home-narrow.png",
-          "sizes": "1600x2420",
-          "form_factor": "narrow",
-          "label": "Home Page"
+          src: "/screenshots/home-narrow.png",
+          sizes: "1600x2420",
+          form_factor: "narrow",
+          label: "Home Page",
         },
         {
-          "src": "/screenshots/recipe-narrow.png",
-          "sizes": "1600x2420",
-          "form_factor": "narrow",
-          "label": "Recipe Page"
+          src: "/screenshots/recipe-narrow.png",
+          sizes: "1600x2420",
+          form_factor: "narrow",
+          label: "Recipe Page",
         },
         {
-          "src": "/screenshots/editor-narrow.png",
-          "sizes": "1600x2420",
-          "form_factor": "narrow",
-          "label": "Editor Page"
+          src: "/screenshots/editor-narrow.png",
+          sizes: "1600x2420",
+          form_factor: "narrow",
+          label: "Editor Page",
         },
         {
-          "src": "/screenshots/parser-narrow.png",
-          "sizes": "1600x2420",
-          "form_factor": "narrow",
-          "label": "Parser Page"
+          src: "/screenshots/parser-narrow.png",
+          sizes: "1600x2420",
+          form_factor: "narrow",
+          label: "Parser Page",
         },
         {
-          "src": "/screenshots/home-wide.png",
-          "sizes": "2560x1460",
-          "form_factor": "wide",
-          "label": "Home Page"
+          src: "/screenshots/home-wide.png",
+          sizes: "2560x1460",
+          form_factor: "wide",
+          label: "Home Page",
         },
         {
-          "src": "/screenshots/recipe-wide.png",
-          "sizes": "2560x1460",
-          "form_factor": "wide",
-          "label": "Recipe Page"
+          src: "/screenshots/recipe-wide.png",
+          sizes: "2560x1460",
+          form_factor: "wide",
+          label: "Recipe Page",
         },
         {
-          "src": "/screenshots/editor-wide.png",
-          "sizes": "2560x1460",
-          "form_factor": "wide",
-          "label": "Editor Page"
+          src: "/screenshots/editor-wide.png",
+          sizes: "2560x1460",
+          form_factor: "wide",
+          label: "Editor Page",
         },
         {
-          "src": "/screenshots/parser-wide.png",
-          "sizes": "2560x1460",
-          "form_factor": "wide",
-          "label": "Parser Page"
-        }
+          src: "/screenshots/parser-wide.png",
+          sizes: "2560x1460",
+          form_factor: "wide",
+          label: "Parser Page",
+        },
       ],
-      "shortcuts": [
+      shortcuts: [
         {
-          "name": "Shopping Lists",
-          "short_name": "Shopping Lists",
-          "description": "Open the shopping lists",
-          "url": "/shopping-lists",
-          "icons": [
+          name: "Shopping Lists",
+          short_name: "Shopping Lists",
+          description: "Open the shopping lists",
+          url: "/shopping-lists",
+          icons: [
             {
-              "src": "/icons/mdiFormatListChecks-192x192.png",
-              "sizes": "192x192",
+              src: "/icons/mdiFormatListChecks-192x192.png",
+              sizes: "192x192",
             },
             {
-              "src": "/icons/mdiFormatListChecks-96x96.png",
-              "sizes": "96x96",
-            }
-          ]
+              src: "/icons/mdiFormatListChecks-96x96.png",
+              sizes: "96x96",
+            },
+          ],
         },
         {
-          "name": "Meal Planner",
-          "short_name": "Meal Planner",
-          "description": "Open the meal planner",
-          "url": "/household/mealplan/planner/view",
-          "icons": [
+          name: "Meal Planner",
+          short_name: "Meal Planner",
+          description: "Open the meal planner",
+          url: "/household/mealplan/planner/view",
+          icons: [
             {
-              "src": "/icons/mdiCalendarMultiselect-192x192.png",
-              "sizes": "192x192",
+              src: "/icons/mdiCalendarMultiselect-192x192.png",
+              sizes: "192x192",
             },
             {
-              "src": "/icons/mdiCalendarMultiselect-96x96.png",
-              "sizes": "96x96",
-            }
-          ]
+              src: "/icons/mdiCalendarMultiselect-96x96.png",
+              sizes: "96x96",
+            },
+          ],
         },
       ],
       prefer_related_applications: false,
       handle_links: "preferred",
-      categories: [
-        "food"
-      ],
+      categories: ["food"],
       launch_handler: {
-        "client_mode": ["focus-existing", "auto"]
+        client_mode: ["focus-existing", "auto"],
       },
       edge_side_panel: {
-        "preferred_width": 400
-      }
+        preferred_width: 400,
+      },
     },
     icon: false, // disables the icon module
   },
@@ -525,11 +538,11 @@ export default {
     extend(config, ctx) {
       config.module.rules.push({
         test: /\.(ogg|mp3|wav|mpe?g)$/i,
-        loader: 'file-loader',
+        loader: "file-loader",
         options: {
-          name: '[path][name].[ext]'
-        }
-      })
+          name: "[path][name].[ext]",
+        },
+      });
     },
     transpile: process.env.NODE_ENV !== "production" ? [/@vue[\\/]composition-api/] : null,
   },
