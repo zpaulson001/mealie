@@ -76,7 +76,7 @@ export default defineComponent({
         </v-btn>
         <v-tooltip top>
           <template v-slot:activator="{ on }">
-            <v-btn icon class="theme--dark" @click="reset" v-on="on">
+            <v-btn icon class="theme--dark" @click="handleClose" v-on="on">
               <v-icon> {{ $globals.icons.close }}</v-icon>
             </v-btn>
           </template>

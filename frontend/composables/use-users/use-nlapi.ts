@@ -42,6 +42,7 @@ export function useNlapi() {
     messageData.value = undefined;
     threadId.value = undefined;
     statusMessage.value = undefined;
+    messages.value = [];
   }
 
   async function sendMessage(query: string) {
