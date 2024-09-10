@@ -21,7 +21,6 @@ export default defineComponent({
       queryString.value = '';
     }
 
-
     const handleEnterUp = (event: KeyboardEvent) => {
       if (event.shiftKey || event.ctrlKey) {
         return;
@@ -87,7 +86,7 @@ export default defineComponent({
     </v-card-title>
 
     <!-- Chat Window -->
-    <v-card-text class="py-4 chat-container">
+    <v-card-text class="chat-container">
       <div class="chat-window">
         <div style="display: flex; flex-direction: column;" v-for="(message, index) in messages" :key="index">
           <v-sheet v-if="message.speaker === 'bot'" light class="message">
@@ -98,7 +97,7 @@ export default defineComponent({
             {{ message.content }}
           </v-sheet>
         </div>
-        <v-progress-circular v-if="isPending" indeterminate color="primary"></v-progress-circular>
+        <v-progress-circular v-if="isPending" indeterminate color="primary" class="mb-4"></v-progress-circular>
         <v-sheet v-if="messageData" class="message" light>
           <SafeMarkdown :source="messageData" />
         </v-sheet>
@@ -151,6 +150,8 @@ export default defineComponent({
 
 .chat-container {
   max-height: 100%;
+  padding-bottom: 0;
+  padding-top: 1rem;
   align-self: end;
   min-height: 0;
   overflow-y: auto;
