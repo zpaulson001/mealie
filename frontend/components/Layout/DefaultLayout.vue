@@ -69,6 +69,8 @@
         <v-icon> {{ $globals.icons.menu }}</v-icon>
       </v-btn>
     </AppHeader>
+
+    <NlapiChat />
     <v-main>
       <v-scroll-x-transition>
         <Nuxt />
@@ -82,6 +84,7 @@ import { computed, defineComponent, onMounted, ref, useContext, useRoute } from 
 import { useLoggedInState } from "~/composables/use-logged-in-state";
 import AppHeader from "@/components/Layout/LayoutParts/AppHeader.vue";
 import AppSidebar from "@/components/Layout/LayoutParts/AppSidebar.vue";
+import NlapiChat from "@/components/Layout/LayoutParts/NlapiChat.vue";
 import { SidebarLinks } from "~/types/application-types";
 import LanguageDialog from "~/components/global/LanguageDialog.vue";
 import TheSnackbar from "@/components/Layout/LayoutParts/TheSnackbar.vue";
@@ -90,7 +93,7 @@ import { useCookbooks, usePublicCookbooks } from "~/composables/use-group-cookbo
 import { useToggleDarkMode } from "~/composables/use-utils";
 
 export default defineComponent({
-  components: { AppHeader, AppSidebar, LanguageDialog, TheSnackbar },
+  components: { AppHeader, AppSidebar, LanguageDialog, TheSnackbar, NlapiChat },
   setup() {
     const { $globals, $auth, $vuetify, i18n } = useContext();
     const { isOwnGroup } = useLoggedInState();
