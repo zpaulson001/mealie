@@ -12,8 +12,8 @@
         <p class="mb-3">
           <!-- {{ $tc('user.it-looks-like-this-is-your-first-time-logging-in')}} -->
         </p>
-        <p class="mb-1"><strong>{{ $tc('user.username') }}:</strong> changeme@example.com</p>
-        <p class="mb-3"><strong>{{  $tc('user.password') }}:</strong> MyPassword</p>
+        <p class="mb-1"><strong>{{ $tc('user.username') }}:</strong> admin@example.com</p>
+        <p class="mb-3"><strong>{{  $tc('user.password') }}:</strong> nlapi_demo</p>
         <p>
           {{  $tc('user.dont-want-to-see-this-anymore-be-sure-to-change-your-email') }}
         </p>
