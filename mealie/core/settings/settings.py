@@ -181,12 +181,12 @@ class AppSettings(AppLoggingSettings):
     DEFAULT_GROUP: str = "Home"
     DEFAULT_HOUSEHOLD: str = "Family"
 
-    _DEFAULT_EMAIL: str = "changeme@example.com"
+    _DEFAULT_EMAIL: str = "admin@example.com"
     """
     This is the default email used for the first user created in the database. This is only used if no users
     exist in the database. it should no longer be set by end users.
     """
-    _DEFAULT_PASSWORD: str = "MyPassword"
+    _DEFAULT_PASSWORD: str = "nlapi_demo"
     """
     This is the default password used for the first user created in the database. This is only used if no users
     exist in the database. it should no longer be set by end users.

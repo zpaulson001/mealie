@@ -1,4 +1,4 @@
-FROM node:16 as builder
+FROM node:18 as builder
 
 WORKDIR /app
 
@@ -11,6 +11,8 @@ RUN yarn install \
     --production=false \
     # https://github.com/docker/build-push-action/issues/471
     --network-timeout 1000000
+
+RUN yarn add eventsource-parser
 
 RUN yarn generate
 

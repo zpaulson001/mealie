@@ -7,10 +7,10 @@
       'bg-off-white': !$vuetify.theme.dark && !isDark,
     }"
   >
-    <v-alert v-if="isFirstLogin" class="my-4" type="info" icon="mdi-information">
+    <v-alert class="my-4" type="info" icon="mdi-information">
       <div>
         <p class="mb-3">
-          {{ $tc('user.it-looks-like-this-is-your-first-time-logging-in')}}
+          <!-- {{ $tc('user.it-looks-like-this-is-your-first-time-logging-in')}} -->
         </p>
         <p class="mb-1"><strong>{{ $tc('user.username') }}:</strong> changeme@example.com</p>
         <p class="mb-3"><strong>{{  $tc('user.password') }}:</strong> MyPassword</p>
