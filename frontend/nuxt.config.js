@@ -303,6 +303,7 @@ export default {
     GLOBAL_MIDDLEWARE: process.env.GLOBAL_MIDDLEWARE || null,
     SUB_PATH: process.env.SUB_PATH || "",
     NLAPI_BASE_URL: process.env.NLAPI_BASE_URL || null,
+    NLAPI_KEY: process.env.NLAPI_KEY || null,
     TEST: process.env.TEST || null,
     axios: {
       browserBaseURL: process.env.SUB_PATH || "",

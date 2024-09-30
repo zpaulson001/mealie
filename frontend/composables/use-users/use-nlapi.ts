@@ -59,6 +59,7 @@ export function useNlapi() {
         headers: {
           "Content-Type": "application/json",
           Authorization: access_token,
+          "nlapi-key": window.$nuxt.$config.NLAPI_KEY,
         },
         body: JSON.stringify({
           user_input: query,
