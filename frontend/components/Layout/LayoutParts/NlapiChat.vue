@@ -46,7 +46,6 @@ export default defineComponent({
     }
 
     watch(isPending, (newVal) => {
-      console.log('isPending changed:', newVal);
       scrollToBottom();
     });
 
