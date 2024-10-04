@@ -9,6 +9,11 @@ primary_region = 'ewr'
 [build]
   dockerfile = 'docker/Dockerfile'
 
+[mounts]
+  source = "mealie"  # Volume name
+  destination = "/app/data"  # Directory inside the container where the volume will be mounted
+
+
 [http_service]
   internal_port = 9000
   force_https = true
@@ -18,6 +23,11 @@ primary_region = 'ewr'
   processes = ['app']
 
 [[vm]]
+  idle_timeout = 1200  # (20 min) the number of seconds you want before sleeping
   memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
+
+[env]
+  NLAPI_BASE_URL = "https://nlapi.jasekraft.com"
+  NLAPI_KEY = "nlv1_sk_fd1fe1aba9084e049547417ca7b7c563"

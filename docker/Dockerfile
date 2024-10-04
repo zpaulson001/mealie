@@ -1,3 +1,5 @@
+# Build for Local Development: docker build --build-arg=NLAPI_BASE_URL="http://localhost:5000" -t mealie:test-f docker/Dockerfile .
+# Run: docker run -p 9091:9000 --name mealie mealie:test
 FROM node:18 as builder
 
 WORKDIR /app
@@ -13,6 +15,9 @@ RUN yarn install \
     --network-timeout 1000000
 
 RUN yarn add eventsource-parser
+
+ARG NLAPI_BASE_URL
+ENV NLAPI_BASE_URL=${NLAPI_BASE_URL}
 
 RUN yarn generate
 
