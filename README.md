@@ -6,6 +6,15 @@
 [![Docker Pulls][docker-pull]][docker-url]
 [![GHCR Pulls][ghcr-pulls]][ghcr-url]
 
+### Add Fly to Command Line:
+ 2001  curl -L https://fly.io/install.sh | sh
+ 2004  export FLYCTL_INSTALL="/home/jase/.fly"
+export FLYCTL_INSTALL="/home/jase/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+# Deploying with Fly:
+
+
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
